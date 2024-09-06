@@ -1,0 +1,141 @@
+.image-slider-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    background-color: #f0f0f0;
+  }
+  
+  .card-container {
+    flex: 1;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-container p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .shop-now-btn {
+    padding: 0.75rem 2rem;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .slider-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Make sure slider-container is positioned relative */
+  }
+  
+  .slider {
+    position: relative;
+    width: 400px;
+    height: 300px;
+  }
+  
+  .slider img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .description-overlay {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    max-width: 90%; /* Ensure it doesn’t stretch too wide */
+  }
+  
+  .slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  
+  .slider-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  /* Responsive Adjustments */
+  @media screen and (max-width: 768px) {
+    .image-slider-section {
+      padding: 2rem;
+      flex-direction: column; /* Stack vertically on smaller screens */
+    }
+  
+    .card-container {
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      margin: 0 0 2rem 0; /* Space between cards in column layout */
+    }
+  
+    .card-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .card-container p {
+      font-size: 1rem;
+    }
+  
+    .shop-now-btn {
+      padding: 0.5rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  
+    .slider-container {
+      width: 100%;
+      margin: 0 auto; /* Center slider on smaller screens */
+    }
+  
+    .slider {
+      width: 100%;
+      max-width: 100%; /* Ensure it fits within the container */
+      height: auto; /* Adjust height automatically */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .card-container {
+      padding: 1rem;
+      font-size: 0.8rem;
+    }
+  
+    .shop-now-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+    }
+  
+    .slider-controls button {
+      padding: 0.5rem;
+    }
+  }
+  

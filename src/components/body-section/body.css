@@ -1,0 +1,97 @@
+/* Section styles */
+.image-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  /* Image grid */
+  .image-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Ensure images wrap on smaller screens */
+  }
+  
+  /* Individual image card */
+  .image-card {
+    width: 250px;
+    text-align: center;
+  }
+  
+  .image-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .image-card h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #555;
+  }
+  
+  /* Responsive design */
+  
+  /* Small screens (mobile) */
+  @media (max-width: 767px) {
+    .image-grid {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+  
+  /* Medium screens (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 3rem;
+    }
+    .image-card h3 {
+      font-size: 1.75rem;
+    }
+  }
+  
+  /* Large screens (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    .section-title {
+      font-size: 3.5rem;
+    }
+  
+    .image-grid {
+      gap: 3rem; /* Increase gap between images for larger screens */
+    }
+  
+    .image-card {
+      width: 300px; /* Increase image size on large screens */
+    }
+  
+    .image-card h3 {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Extra large screens (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    .section-title {
+      font-size: 4rem;
+    }
+  
+    .image-grid {
+      gap: 4rem; /* Further increase gap for very large screens */
+    }
+  
+    .image-card {
+      width: 350px; /* Larger image cards */
+    }
+  
+    .image-card h3 {
+      font-size: 2.2rem;
+    }
+  }
+  

@@ -1,0 +1,173 @@
+/* Section styles */
+.product-card-section {
+  padding: 3rem 1rem;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.product-card-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* Grid layout for cards */
+.product-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* Card styling */
+.product-card {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Align text to the left */
+  transition: transform 0.3s ease;
+}
+
+/* Product Image with Discount Label */
+.product-image-container {
+  position: relative;
+  width: 100%;
+}
+
+.product-image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.discount-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Card content */
+.product-card-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.product-card-content p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #777;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Overlay and icon buttons */
+.product-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.product-add-to-cart {
+  background-color: #f39c12;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.product-icon-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.product-icon-buttons a {
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.product-card:hover .product-card-overlay {
+  opacity: 1;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Center button container */
+.center-button-container {
+  margin-top: 2rem;
+}
+
+.center-button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.center-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design */
+
+/* Small screens (mobile) */
+@media (max-width: 767px) {
+  .product-card-grid {
+    grid-template-columns: repeat(1, 1fr); /* Stack cards vertically */
+  }
+
+  .product-card {
+    width: 100%; /* Full width for mobile */
+  }
+
+  .product-add-to-cart {
+    font-size: 0.9rem;
+  }
+}
+
+/* Medium screens (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .product-card-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+}
+
+/* Large screens (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .product-card-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  }
+}

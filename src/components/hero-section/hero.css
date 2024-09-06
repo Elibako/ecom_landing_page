@@ -1,0 +1,73 @@
+/* Hero section styles */
+.hero {
+    position: relative;
+    background-image: url('src/assets/background.png'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  /* Overlay card */
+  .overlay {
+    background: rgba(255, 243, 227, 1); /* Semi-transparent background */
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin-right: 2rem;
+    border-radius: 10px;
+    color: #fff;
+    text-align: left;
+  }
+  
+  /* .card {
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  } */
+  
+  .card h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: rgba(184, 142, 47, 1);
+    ;
+    
+  }
+  
+  .card p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(184, 142, 47, 1);
+    ;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #e65c50;
+  }
+  
+  /* Responsive design */
+  
+  /* Medium screens (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    .card h1 {
+      font-size: 3rem;
+    }
+    .card p {
+      font-size: 1.4rem;
+    }
+  }
+  
+  
