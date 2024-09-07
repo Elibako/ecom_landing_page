@@ -5,14 +5,14 @@ import { faShareAlt, faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-
 
 const ProductCardSection = () => {
   const products = [
-    { id: 1, title: "Product 1", description: "Best quality product", price: "$50", image: "src/assets/Images.png" },
-    { id: 2, title: "Product 2", description: "Highly recommended", price: "$60", image: "src/assets/Leviosa.png" },
-    { id: 3, title: "Product 3", description: "Limited time offer", price: "$40", image: "src/assets/Lolito.png" },
-    { id: 4, title: "Product 4", description: "Great for everyday use", price: "$70", image: "src/assets/Respira.png" },
-    { id: 5, title: "Product 5", description: "Durable and stylish", price: "$90", image: "src/assets/Grifo.png" },
-    { id: 6, title: "Product 6", description: "Affordable and high quality", price: "$30", image: "src/assets/Muggo.png" },
-    { id: 7, title: "Product 7", description: "Perfect for gifting", price: "$80", image: "src/assets/Pingky.png" },
-    { id: 8, title: "Product 8", description: "Top-rated product", price: "$100", image: "src/assets/Potty.png" },
+    { id: 1, title: "Product 1", description: "Best quality product", price: "$50", image: "src/assets/Images.png", discount: "-30%", bannerStyle: "discount-banner-1" },
+    { id: 2, title: "Product 2", description: "Highly recommended", price: "$60", image: "src/assets/Leviosa.png", discount: "", bannerStyle: "discount-banner-2" },
+    { id: 3, title: "Product 3", description: "Limited time offer", price: "$40", image: "src/assets/Lolito.png", discount: "-20%", bannerStyle: "discount-banner-3" },
+    { id: 4, title: "Product 4", description: "Great for everyday use", price: "$70", image: "src/assets/Respira.png", discount: "", bannerStyle: "discount-banner-4" },
+    { id: 5, title: "Product 5", description: "Durable and stylish", price: "$90", image: "src/assets/Grifo.png", discount: "-10%", bannerStyle: "discount-banner-1" },
+    { id: 6, title: "Product 6", description: "Affordable and high quality", price: "$30", image: "src/assets/Muggo.png", discount: "", bannerStyle: "discount-banner-2" },
+    { id: 7, title: "Product 7", description: "Perfect for gifting", price: "$80", image: "src/assets/Pingky.png", discount: "-25%", bannerStyle: "discount-banner-3" },
+    { id: 8, title: "Product 8", description: "Top-rated product", price: "$100", image: "src/assets/Potty.png", discount: "", bannerStyle: "discount-banner-4" },
   ];
 
   return (
@@ -23,7 +23,7 @@ const ProductCardSection = () => {
           <div className="product-card" key={product.id}>
             <div className="product-image-container">
               <img src={product.image} alt={product.title} />
-              <span className="discount-label">-50%</span>
+              {product.discount && <span className={`discount-label ${product.bannerStyle}`}>{product.discount}</span>}
             </div>
             <div className="product-card-content">
               <h3>{product.title}</h3>

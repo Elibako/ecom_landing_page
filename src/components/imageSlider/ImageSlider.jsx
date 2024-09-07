@@ -24,9 +24,10 @@ const ImageSlider = () => {
   return (
     <section className="image-slider-section">
       <div className="card-container">
-        <h2>Exclusive Offer</h2>
-        <p>Get the best deals on our latest products.</p>
-        <button className="shop-now-btn">Shop Now</button>
+        <h1>50+ Beautiful rooms 
+        inspiration</h1>
+        <p>Our designer already made a lot of beautiful prototipe of rooms that inspire you</p>
+        <button className="shop-now-btn">Explore More</button>
       </div>
 
       <div className="slider-container">

@@ -1,0 +1,145 @@
+/* footer.css */
+
+.footer {
+  background-color: #ffffff; /* Background color */
+  color: #000000; /* Text color */
+  padding: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  flex: 1;
+  margin: 1rem;
+}
+
+.footer-left img {
+  max-width: 150px;
+}
+
+.footer-left p {
+  margin-top: 0.5rem;
+}
+
+.footer-center {
+  flex: 2;
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center;     /* Center items vertically */
+  margin: 1rem;
+}
+
+.links, .help {
+  margin-right: 2rem; /* Adjusted margin for spacing */
+}
+
+.links h4, .help h4 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.links ul, .help ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.links ul li, .help ul li {
+  margin: 0.5rem 0;
+}
+
+.links ul li a, .help ul li a {
+  color: #000000; /* Text color for links */
+  text-decoration: none;
+}
+
+.links ul li a:hover, .help ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-right {
+  flex: 1;
+  margin: 1rem;
+}
+
+.newsletter {
+  display: flex;
+  align-items: center; /* Align items horizontally */
+}
+
+.email-input {
+  background-color: transparent; /* Button background color */
+  color: #000000; 
+  font-weight: lighter;
+  border: none;
+  border-bottom: 1px solid black; 
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 0.5rem; 
+}
+
+.email-input.error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.subscribe-btn {
+  background-color: transparent; /* Button background color */
+  color: #000000; /* Button text color */
+  border: none; /* Remove all borders */
+  border-bottom: 1px solid black; /* Only bottom border */
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 0.5rem; /* Space between input and button */
+  
+}
+
+.subscribe-btn:hover {
+  background-color: #ebeef0; /* Button hover background color */
+  border-radius: 2px;
+  
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #ddd; /* Faint line color */
+  margin-bottom: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-center {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .newsletter {
+    flex-direction: column;
+    align-items: stretch; /* Stack input and button vertically */
+  }
+
+  .subscribe-btn {
+    margin-left: 0; /* Remove left margin on smaller screens */
+    margin-top: 0.5rem; /* Space between input and button on smaller screens */
+  }
+}

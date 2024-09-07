@@ -4,7 +4,8 @@ import './body.css';
 const Body = () => {
   return (
     <section className="image-section">
-      <h2 className="section-title">Our Featured Products</h2>
+      <h2 className="section-title">Browse The Range</h2>
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       <div className="image-grid">
         <div className="image-card">
           <img src="src/assets/dining.svg" alt="Product 1" />

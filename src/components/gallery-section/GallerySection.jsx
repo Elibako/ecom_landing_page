@@ -4,12 +4,12 @@ import './gallerysection.css'; // Update the CSS file name
 const GallerySection = () => {
   const images = [
     "src/assets/2.png",
-    "image2.jpg",
-    "image3.jpg",
-    "image4.jpg",
-    "image5.jpg",
-    "image6.jpg",
-    "image7.jpg",
+    "src/assets/a.png",
+    "src/assets/b.png",
+    "src/assets/c.png",
+    "src/assets/d.png",
+    "src/assets/e.png",
+    "src/assets/2",
   ];
 
   return (
