@@ -61,7 +61,7 @@ const Footer = () => {
                   <Field 
                     type="email" 
                     name="email" 
-                    placeholder="Enter your email address" 
+                    placeholder="Enter your email" 
                     className={`email-input ${touched.email && errors.email ? 'error' : ''}`}
                   />
                   {touched.email && errors.email && <div className="error-message">{errors.email}</div>}

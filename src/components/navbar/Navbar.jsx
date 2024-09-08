@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './navbar.css'; // Ensure this path is correct
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faSearch, faUser, faBell } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faUser, } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-scroll'; // Import Link from react-scroll
+import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { ShoppingCart } from 'react-feather';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -44,10 +46,13 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="icons">
-        <a href="#"><FontAwesomeIcon icon={faShoppingCart} /></a>
-        <a href="#"><FontAwesomeIcon icon={faSearch} /></a>
-        <a href="#"><FontAwesomeIcon icon={faUser} /></a>
-        <a href="#"><FontAwesomeIcon icon={faBell} /></a>
+        <a href=""><FontAwesomeIcon icon={faUser}/></a>
+        <a href=""><FontAwesomeIcon icon={faSearch}/></a>
+        <a href=""><FontAwesomeIcon icon={faHeart}/></a>
+        <a href=""><ShoppingCart /></a>
+      
+     
+        
       </div>
       {isMobileMenuOpen && (
         <div className="mobile-menu">

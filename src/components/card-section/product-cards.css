@@ -57,7 +57,7 @@
 
 /* Specific discount banner styles */
 .discount-banner-1 {
-  background-color: #ff0000; /* Red */
+  background-color:  rgba(233, 113, 113, 1); /* Red */
 }
 
 .discount-banner-2 {
@@ -65,11 +65,14 @@
 }
 
 .discount-banner-3 {
-  background-color: #0000ff; /* Blue */
+  background-color: rgba(233, 113, 113, 1); /* Blue */
 }
 
 .discount-banner-4 {
-  background-color: #ff9900; /* Orange */
+  background-color: rgba(46, 193, 172, 1); /* Orange */
+}
+.discount-banner-6{
+  background-color: rgba(46, 193, 172, 1);
 }
 
 /* Card content */
@@ -154,7 +157,8 @@
 }
 
 .center-button:hover {
-  background-color: #0056b3;
+  background-color: rgba(184, 142, 47, 1);
+  color: white;
 }
 
 /* Responsive design */
