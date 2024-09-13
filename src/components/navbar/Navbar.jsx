@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './navbar.css'; // Ensure this path is correct
+import './navbar.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faUser, } from '@fortawesome/free-regular-svg-icons';
-import { Link } from 'react-scroll'; // Import Link from react-scroll
-import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faUser } from '@fortawesome/free-regular-svg-icons';
+import { Link } from 'react-router-dom'; // Import from react-router-dom
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { ShoppingCart } from 'react-feather';
 
 const Navbar = () => {
@@ -16,7 +16,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src="src/assets/logo.svg" alt="Logo" />
+        <Link to="/">
+          <img src="src/assets/logo.svg" alt="Logo" />
+        </Link>
       </div>
       <div className="hamburger-menu" onClick={toggleMobileMenu}>
         <span className="bar"></span>
@@ -25,55 +27,52 @@ const Navbar = () => {
       </div>
       <ul className={`navlinks ${isMobileMenuOpen ? 'active' : ''}`}>
         <li>
-          <Link to="home" smooth={true} duration={500} offset={-70}>
-            Home
-          </Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="shop" smooth={true} duration={500} offset={-70}>
-            Shop
-          </Link>
+          <Link to="/shop-page">Shop</Link> {/* Update path to '/shop-page' */}
         </li>
         <li>
-          <Link to="about" smooth={true} duration={500} offset={-70}>
-            About
-          </Link>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="contact" smooth={true} duration={500} offset={-70}>
-            Contact
-          </Link>
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
       <div className="icons">
-        <a href=""><FontAwesomeIcon icon={faUser}/></a>
-        <a href=""><FontAwesomeIcon icon={faSearch}/></a>
-        <a href=""><FontAwesomeIcon icon={faHeart}/></a>
-        <a href=""><ShoppingCart /></a>
-      
-     
-        
+        <a href="">
+          <FontAwesomeIcon icon={faUser} />
+        </a>
+        <a href="">
+          <FontAwesomeIcon icon={faSearch} />
+        </a>
+        <a href="">
+          <FontAwesomeIcon icon={faHeart} />
+        </a>
+        <a href="">
+          <ShoppingCart />
+        </a>
       </div>
       {isMobileMenuOpen && (
         <div className="mobile-menu">
           <ul>
             <li>
-              <Link to="home" smooth={true} duration={500} offset={-70} onClick={toggleMobileMenu}>
+              <Link to="/" onClick={toggleMobileMenu}>
                 Home
               </Link>
             </li>
             <li>
-              <Link to="shop" smooth={true} duration={500} offset={-70} onClick={toggleMobileMenu}>
+              <Link to="/shop-page" onClick={toggleMobileMenu}>
                 Shop
               </Link>
             </li>
             <li>
-              <Link to="about" smooth={true} duration={500} offset={-70} onClick={toggleMobileMenu}>
+              <Link to="/about" onClick={toggleMobileMenu}>
                 About
               </Link>
             </li>
             <li>
-              <Link to="contact" smooth={true} duration={500} offset={-70} onClick={toggleMobileMenu}>
+              <Link to="/contact" onClick={toggleMobileMenu}>
                 Contact
               </Link>
             </li>

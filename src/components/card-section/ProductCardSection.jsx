@@ -2,6 +2,7 @@ import React from 'react';
 import './product-cards.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareAlt, faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom'; // Import Link
 
 const ProductCardSection = () => {
   const products = [
@@ -42,7 +43,9 @@ const ProductCardSection = () => {
         ))}
       </div>
       <div className="center-button-container">
-        <button className="center-button">See More Products</button>
+        <Link to="/shop-page" className="center-button">
+          See More Products
+        </Link>
       </div>
     </section>
   );

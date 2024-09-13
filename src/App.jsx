@@ -6,33 +6,38 @@ import ProductCardSection from './components/card-section/ProductCardSection';
 import ImageSlider from './components/imageSlider/ImageSlider';
 import GallerySection from './components/gallery-section/GallerySection';
 import Footer from './components/footer-section/Footer';
+import ShopPage from './components/shop-page/ShopPage';
 
 function App() {
   return (
     <Router>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={
-        <>
-          <section id="home">
-            <Hero />
-          </section>
-          <section id="shop">
-            <Body />
-          </section>
-          <section id="about">
-            <ProductCardSection />
-          </section>
-          <section id="contact">
-            <ImageSlider />
-            <GallerySection />
-          </section>
-        </>
-      } />
-    </Routes>
-    <Footer /> {/* Ensure Footer is included here */}
-  </Router>
-  
+      <Navbar />
+      <Routes>
+        {/* Home Page */}
+        <Route path="/" element={
+          <>
+            <section id="home">
+              <Hero />
+              
+            </section>
+            <section id="shop">
+              <Body />
+            </section>
+            <section id="about">
+              <ProductCardSection />
+            </section>
+            <section id="contact">
+              <ImageSlider />
+              <GallerySection />
+            </section>
+          </>
+        } />
+
+        {/* Separate Route for ShopPage */}
+        <Route path="/shop-page" element={<ShopPage />} />
+      </Routes>
+      <Footer /> {/* Ensure Footer is included here */}
+    </Router>
   );
 }
 

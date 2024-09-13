@@ -1,0 +1,274 @@
+/* Section styles */
+.product-card-section, .shop-page-section {
+    padding: 3rem 1rem;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.product-card-section h2, .shop-page-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* Grid layout for cards */
+.product-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    justify-items: center;
+}
+
+/* Card styling */
+.product-card {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    padding: 1rem;
+    background-color: rgba(244, 245, 247, 1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+}
+
+/* Product Image with Discount Label */
+.product-image-container {
+    position: relative;
+    width: 100%;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.discount-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 4px;
+    background-color: currentColor; /* Use currentColor for better contrast management */
+}
+
+/* Specific discount banner styles */
+.discount-banner-1 {
+    background-color: rgba(233, 113, 113, 1); /* Red */
+}
+
+.discount-banner-2 {
+    background-color: #00ff00; /* Green */
+}
+
+.discount-banner-3 {
+    background-color: rgba(113, 183, 233, 1); /* Blue */
+}
+
+.discount-banner-4 {
+    background-color: rgba(46, 193, 172, 1); /* Orange */
+}
+
+/* Card content */
+.product-card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.product-card-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #777;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Overlay and icon buttons */
+.product-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.product-add-to-cart {
+    background-color: #f39c12;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.product-icon-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.product-icon-buttons a {
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.product-card:hover .product-card-overlay {
+    opacity: 1;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Center button container */
+.center-button-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+}
+
+.center-button {
+    background-color: transparent;
+    color: rgba(184, 142, 47, 1);
+    padding: 0.75rem 1.5rem;
+    border: 1px solid rgba(184, 142, 47, 1);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0 0.5rem; /* Adjust margin for spacing */
+}
+
+.center-button:hover {
+    background-color: rgba(184, 142, 47, 1);
+    color: white;
+}
+
+/* Pagination styles */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.pagination-controls button {
+    background-color: transparent;
+    border: 1px solid rgba(184, 142, 47, 1);
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px; /* Consistent border-radius */
+}
+
+.pagination-controls button.active {
+    background-color: rgba(184, 142, 47, 1);
+    color: white;
+}
+
+.pagination-controls button:hover {
+    background-color: rgba(184, 142, 47, 1);
+    color: white;
+}
+.support-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /* Align items to the top */
+    padding: 2rem 1rem;
+    background-color:rgba(250, 243, 234, 1);
+    gap: 2rem; /* Add space between items */
+    margin-top: 40%;
+  }
+  
+  .support-item {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    max-width: 250px; /* Adjust as needed */
+    text-align: left;
+  }
+  
+  .support-icon {
+    margin-right: 1rem; /* Space between icon and text */
+  }
+  
+  .support-icon img {
+    width: 40px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .support-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .support-text {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .support-subtext {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  
+  /* Responsive design for mobile */
+  @media (max-width: 767px) {
+    .support-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+
+/* Responsive design */
+
+/* Small screens (mobile) */
+@media (max-width: 767px) {
+    .product-card-grid {
+        grid-template-columns: repeat(1, 1fr); /* Stack cards vertically */
+    }
+
+    .product-card {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .product-add-to-cart {
+        font-size: 0.9rem;
+    }
+}
+
+/* Medium screens (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .product-card-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+}
+
+/* Large screens (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .product-card-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    }
+}
