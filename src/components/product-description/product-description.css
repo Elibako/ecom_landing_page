@@ -1,0 +1,88 @@
+.product-description {
+    display: flex;
+  }
+  
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+  }
+  
+  .main-photo img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .small-photos img {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .right-section {
+    width: 70%;
+    padding-left: 20px;
+  }
+  
+  .price {
+    font-size: 1.5em;
+    color: #b88e2f;
+  }
+  
+  .rating .stars {
+    color: gold;
+  }
+  
+  .rating .reviews {
+    margin-left: 10px;
+  }
+  
+  .size-section, .color-section {
+    margin-top: 20px;
+  }
+  
+  .size-options button, .color-options button {
+    margin-right: 10px;
+  }
+  
+  .quantity-section {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 20px; /* Adds space between counter and buttons */
+  }
+  
+  .quantity-section button {
+    background-color: #ccc;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .quantity-section span {
+    margin: 0 10px;
+    font-size: 1.2em;
+  }
+  
+  /* Ensure quantity section and buttons align in a row */
+  .action-section {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .add-to-cart, .compare {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .add-to-cart {
+    background-color: #b88e2f;
+    color: white;
+  }
+  
+  .compare {
+    background-color: #ccc;
+  }
+  

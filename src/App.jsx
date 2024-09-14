@@ -7,6 +7,7 @@ import ImageSlider from './components/imageSlider/ImageSlider';
 import GallerySection from './components/gallery-section/GallerySection';
 import Footer from './components/footer-section/Footer';
 import ShopPage from './components/shop-page/ShopPage';
+import ProductDescription from './components/product-description/ProductDescription'; // Import ProductDescription
 
 function App() {
   return (
@@ -18,7 +19,6 @@ function App() {
           <>
             <section id="home">
               <Hero />
-              
             </section>
             <section id="shop">
               <Body />
@@ -35,6 +35,10 @@ function App() {
 
         {/* Separate Route for ShopPage */}
         <Route path="/shop-page" element={<ShopPage />} />
+
+        {/* Separate Route for ProductDescription */}
+        <Route path="/product-description" element={<ProductDescription />} />
+        
       </Routes>
       <Footer /> {/* Ensure Footer is included here */}
     </Router>
