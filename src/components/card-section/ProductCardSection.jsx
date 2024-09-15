@@ -1,10 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './product-cards.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareAlt, faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom'; // Import Link
+import { ToastContainer, toast } from 'react-toastify'; // Import Toastify
 
 const ProductCardSection = () => {
+  const [likedProducts, setLikedProducts] = useState(new Set());
+
+  const handleShare = () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      toast.success('Page URL copied to clipboard!');
+    }).catch(() => {
+      toast.error('Failed to copy URL');
+    });
+  };
+
+  const handleLike = (productId) => {
+    setLikedProducts((prevLikedProducts) => {
+      const newLikedProducts = new Set(prevLikedProducts);
+      if (newLikedProducts.has(productId)) {
+        newLikedProducts.delete(productId);
+        toast.info('Product unliked');
+      } else {
+        newLikedProducts.add(productId);
+        toast.success('Product liked!');
+      }
+      return newLikedProducts;
+    });
+  };
+
   const products = [
     { id: 1, title: "Product 1", description: "Best quality product", price: "$50", image: "src/assets/Images.png", discount: "-30%", bannerStyle: "discount-banner-1" },
     { id: 2, title: "Product 2", description: "Highly recommended", price: "$60", image: "src/assets/Leviosa.png", discount: "", bannerStyle: "discount-banner-2" },
@@ -17,39 +42,46 @@ const ProductCardSection = () => {
   ];
 
   return (
-    <section className="product-card-section">
-      <h2>Our Products</h2>
-      <div className="product-card-grid">
-        {products.map((product) => (
-          <div className="product-card" key={product.id}>
-            <div className="product-image-container">
-              <img src={product.image} alt={product.title} />
-              {product.discount && <span className={`discount-label ${product.bannerStyle}`}>{product.discount}</span>}
-            </div>
-            <div className="product-card-content">
-              <h3>{product.title}</h3>
-              <p>{product.description}</p>
-              <span className="product-price">{product.price}</span>
-            </div>
-            <div className="product-card-overlay">
-              <button className="product-add-to-cart">Add to Cart</button>
-              <div className="product-icon-buttons">
-                <a href="#"><FontAwesomeIcon icon={faShareAlt} title="Share" /></a>
-                <a href="#"><Link to="/product-description">
-                     <FontAwesomeIcon icon={faExchangeAlt} title="Compare" />
-                 </Link></a>
-                <a href="#"><FontAwesomeIcon icon={faHeart} title="Like" /></a>
+    <>
+      <section className="product-card-section">
+        <h2>Our Products</h2>
+        <div className="product-card-grid">
+          {products.map((product) => (
+            <div className="product-card" key={product.id}>
+              <div className="product-image-container">
+                <img src={product.image} alt={product.title} />
+                {product.discount && <span className={`discount-label ${product.bannerStyle}`}>{product.discount}</span>}
+              </div>
+              <div className="product-card-content">
+                <h3>{product.title}</h3>
+                <p>{product.description}</p>
+                <span className="product-price">{product.price}</span>
+              </div>
+              <div className="product-card-overlay">
+                <button className="product-add-to-cart">Add to Cart</button>
+                <div className="product-icon-buttons">
+                  <a href="#" onClick={handleShare}>
+                    <FontAwesomeIcon icon={faShareAlt} title="Share" />
+                  </a>
+                  <Link to="/product-description">
+                    <FontAwesomeIcon icon={faExchangeAlt} title="Compare" />
+                  </Link>
+                  <a href="#" onClick={() => handleLike(product.id)}>
+                    <FontAwesomeIcon icon={faHeart} title="Like" color={likedProducts.has(product.id) ? "red" : "black"} />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className="center-button-container">
-        <Link to="/shop-page" className="center-button">
-          Show More
-        </Link>
-      </div>
-    </section>
+          ))}
+        </div>
+        <div className="center-button-container">
+          <Link to="/shop-page" className="center-button">
+            Show More
+          </Link>
+        </div>
+      </section>
+      <ToastContainer /> {/* Add this where you want to display the toast */}
+    </>
   );
 };
 
