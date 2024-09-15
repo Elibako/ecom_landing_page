@@ -38,7 +38,9 @@ const ProductDescription = () => {
         <p className="price">Rs. 250,000.00</p>
         <div className="rating">
           <span className="stars">★★★★☆</span>
-          <span className="reviews">(100 reviews)</span>
+          <span className="vertical-line"></span>
+
+          <span className="reviews">5 Customer Reviews</span>
         </div>
         <p className="description">
           Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.

@@ -50,7 +50,7 @@
 
 .price {
     font-size: 1.5em;
-    color: #b88e2f;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .rating .stars {
@@ -146,7 +146,9 @@
     margin-top: 20px;
     gap: 10px; /* Space between buttons */
 }
-
+.reviews{
+    color: rgba(0, 0, 0, 0.4);
+}
 .add-to-cart, .compare {
     padding: 10px 20px;
     border: none;
@@ -238,7 +240,12 @@
 .additional-info p {
     color: rgba(0, 0, 0, 0.5);
 }
-
+.vertical-line {
+    border-left: 1px solid rgba(0, 0, 0, 0.4); /* Color and thickness of the line */
+    height: 100px; /* Height of the vertical line */
+    margin: 0 10px; /* Spacing around the line */
+  }
+  
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     .product-description {
