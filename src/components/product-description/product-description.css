@@ -1,88 +1,272 @@
 .product-description {
     display: flex;
-  }
-  
-  .left-section {
+    justify-content: center; 
+    align-items: flex-start; 
+    padding: 20px;
+    margin: 50px;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: row; 
+    width: 35%; 
+    padding-right: 10px;
+    align-items: flex-start; 
+}
+
+.main-photo {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+}
+
+.main-photo img {
+    width: 100%; /* Full width of its container */
+    height: auto; /* Maintain the original aspect ratio */
+    max-height: 500px; /* Max height to prevent overflow */
+    object-fit: contain; /* Ensure the image fits within the container */
+    border: none; /* Remove box shadow */
+}
+
+.small-photos {
     display: flex;
     flex-direction: column;
-    width: 30%;
-  }
-  
-  .main-photo img {
+    justify-content: space-between;
+    margin-right: 10px; 
+}
+
+.small-photos img {
     width: 100%;
-    height: auto;
-  }
-  
-  .small-photos img {
-    width: 100%;
-    margin-top: 10px;
-  }
-  
-  .right-section {
-    width: 70%;
+    max-height: 100px; /* Ensure small photos do not exceed the height of the main photo */
+    object-fit: cover; /* Cover the allocated space without stretching */
+    margin-bottom: 10px; /* Space between small photos */
+    border: none; /* Remove box shadow */
+}
+
+.right-section {
+    width: 65%;
     padding-left: 20px;
-  }
-  
-  .price {
+}
+
+.price {
     font-size: 1.5em;
     color: #b88e2f;
-  }
-  
-  .rating .stars {
+}
+
+.rating .stars {
     color: gold;
-  }
-  
-  .rating .reviews {
+}
+
+.rating .reviews {
     margin-left: 10px;
-  }
-  
-  .size-section, .color-section {
+}
+
+.size-section, .color-section {
     margin-top: 20px;
-  }
-  
-  .size-options button, .color-options button {
+}
+
+ .color-options button {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; /* Make the button circular */
     margin-right: 10px;
-  }
-  
-  .quantity-section {
+    padding: 0; /* Remove padding to ensure circle shape */
+    border: 1px solid #ddd; /* Light border for visibility */
+    display: inline-flex; /* Use inline-flex for inline button styling */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.size-options button {
+    display: inline-flex; /* Use inline-flex for inline button styling */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    cursor: pointer;
+    border-radius: 10px; /* Make the button circular */
+    border: none; /* Remove the border */
+    margin-right: 10px; /* Space between buttons */
+    padding: 10px; 
+    width: 50px; 
+    height: 50px; 
+}
+
+
+.size-options button:hover, .color-options button:hover {
+    background-color: #eee; /* Change background color on hover */
+}
+
+
+.X {
+    background-color: rgba(184, 142, 47, 1);
+    color: white;
+}
+
+.XS, .XL {
+    background-color: rgba(249, 241, 231, 1);
+}
+
+.blue {
+    background-color: rgba(129, 109, 250, 1);
+}
+
+.black {
+    background-color: black;
+}
+
+.brown {
+    background-color: rgba(184, 142, 47, 1);
+}
+
+.quantity-section {
     display: flex;
-    align-items: center;
+    align-items: center; 
+    border-radius: 8px;
     margin-top: 20px;
-    margin-right: 20px; /* Adds space between counter and buttons */
-  }
-  
-  .quantity-section button {
-    background-color: #ccc;
+    gap: 10px; 
+    border: 1px solid black;
+}
+
+.quantity-section button {
+    background-color: transparent;
     border: none;
     padding: 10px;
     cursor: pointer;
-  }
-  
-  .quantity-section span {
+    border-radius: 50px; /* Rounded corners */
+}
+
+.quantity-section span {
     margin: 0 10px;
     font-size: 1.2em;
-  }
-  
-  /* Ensure quantity section and buttons align in a row */
-  .action-section {
+}
+
+.action-section {
     display: flex;
-    align-items: center;
+    align-items: center; /* Align items to center */
     margin-top: 20px;
-  }
-  
-  .add-to-cart, .compare {
+    gap: 10px; /* Space between buttons */
+}
+
+.add-to-cart, .compare {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  .add-to-cart {
-    background-color: #b88e2f;
-    color: white;
-  }
-  
-  .compare {
-    background-color: #ccc;
-  }
-  
+    border-radius: 50px; /* Rounded corners */
+    line-height: 1; /* Ensure line height matches button height for better alignment */
+}
+
+.add-to-cart {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+.compare {
+    background-color: transparent;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+.share-section {
+    margin-top: 20px;
+}
+
+.share-buttons {
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.5);
+    gap: 10px; /* Space between buttons */
+}
+
+.share-buttons i {
+    display: inline-flex; /* Align the icons properly */
+    align-items: center; /* Center icons vertically */
+    justify-content: center; /* Center icons horizontally */
+    width: 24px; /* Set width to match the icon size */
+    height: 24px; /* Set height to match the icon size */
+}
+
+.share-buttons i img {
+    width: 100%; /* Ensure images fill their container */
+    height: 100%; /* Ensure images fill their container */
+}
+
+.filter-section {
+    display: flex;
+    justify-content: space-around; /* Distribute space evenly */
+    margin-top: 20px; /* Add space above the filter section */
+    margin-bottom: 20px; /* Add space below the filter section */
+    color:  rgba(0, 0, 0, 0.5);
+}
+
+.filter-header {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 2px solid transparent; /* Default border color */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.filter-header:hover {
+    border-bottom: 2px solid #b88e2f; /* Border color on hover */
+}
+
+.filter-header.active {
+    border-bottom: 2px solid #b88e2f; /* Border color for active state */
+    font-weight: bold; /* Optional: make active header bold */
+}
+
+.description-text {
+    /* padding: 5px; */
+    margin: 50px;
+    color: rgba(0, 0, 0, 0.5)
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-between; /* Distributes space evenly between images */
+    gap: 10px; /* Space between images */
+    padding: 20px;
+}
+
+.gallery-image {
+    width: 48%; /* Adjust the width as needed */
+    height: auto;
+    object-fit: cover;
+}
+
+.additional-info p {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .product-description {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main-photo, .small-photos {
+        width: 100%;
+    }
+
+    .small-photos img {
+        height: 80px; /* Adjust height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .price {
+        font-size: 1.2em;
+    }
+
+    .add-to-cart, .compare, .share-buttons i {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}

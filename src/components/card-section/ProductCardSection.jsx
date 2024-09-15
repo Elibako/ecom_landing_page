@@ -35,7 +35,9 @@ const ProductCardSection = () => {
               <button className="product-add-to-cart">Add to Cart</button>
               <div className="product-icon-buttons">
                 <a href="#"><FontAwesomeIcon icon={faShareAlt} title="Share" /></a>
-                <a href="#"><FontAwesomeIcon icon={faExchangeAlt} title="Compare" /></a>
+                <a href="#"><Link to="/product-description">
+                     <FontAwesomeIcon icon={faExchangeAlt} title="Compare" />
+                 </Link></a>
                 <a href="#"><FontAwesomeIcon icon={faHeart} title="Like" /></a>
               </div>
             </div>
@@ -44,7 +46,7 @@ const ProductCardSection = () => {
       </div>
       <div className="center-button-container">
         <Link to="/shop-page" className="center-button">
-          See More Products
+          Show More
         </Link>
       </div>
     </section>
