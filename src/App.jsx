@@ -8,11 +8,13 @@ import GallerySection from './components/gallery-section/GallerySection';
 import Footer from './components/footer-section/Footer';
 import ShopPage from './components/shop-page/ShopPage';
 import ProductDescription from './components/product-description/ProductDescription'; // Import ProductDescription
+import { CartProvider } from './components/cart/CartContext';
 
 function App() {
   return (
     <Router>
-      <Navbar />
+     <CartProvider>
+     <Navbar />
       <Routes>
         {/* Home Page */}
         <Route path="/" element={
@@ -41,6 +43,7 @@ function App() {
         
       </Routes>
       <Footer /> {/* Ensure Footer is included here */}
+     </CartProvider>
     </Router>
   );
 }

@@ -1,17 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './navbar.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faUser } from '@fortawesome/free-regular-svg-icons';
-import { Link } from 'react-router-dom'; // Import from react-router-dom
+import { Link } from 'react-router-dom';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { ShoppingCart } from 'react-feather';
+import CartSlider from '../cartslider/CartSlider';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const cartRef = useRef(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
+  // Close cart if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        setIsCartOpen(false);
+      }
+    };
+
+    if (isCartOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isCartOpen]);
 
   return (
     <nav className="navbar">
@@ -30,7 +56,7 @@ const Navbar = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/shop-page">Shop</Link> {/* Update path to '/shop-page' */}
+          <Link to="/shop-page">Shop</Link>
         </li>
         <li>
           <Link to="/about">About</Link>
@@ -49,7 +75,8 @@ const Navbar = () => {
         <a href="">
           <FontAwesomeIcon icon={faHeart} />
         </a>
-        <a href="">
+        {/* Cart icon triggers the cart slider */}
+        <a href="#" onClick={toggleCart}>
           <ShoppingCart />
         </a>
       </div>
@@ -79,6 +106,8 @@ const Navbar = () => {
           </ul>
         </div>
       )}
+      {/* CartSlider Component */}
+      <CartSlider isCartOpen={isCartOpen} toggleCart={toggleCart} cartRef={cartRef} />
     </nav>
   );
 };

@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './product-cards.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareAlt, faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom'; // Import Link
-import { ToastContainer, toast } from 'react-toastify'; // Import Toastify
+import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Import Toastify styles
+import { CartContext } from '../cart/CartContext';
 
 const ProductCardSection = () => {
   const [likedProducts, setLikedProducts] = useState(new Set());
+  const { addToCart } = useContext(CartContext); // Access addToCart from context
 
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.href).then(() => {
@@ -28,6 +31,11 @@ const ProductCardSection = () => {
       }
       return newLikedProducts;
     });
+  };
+
+  const handleAddToCart = (product) => {
+    addToCart(product); // Add the product to the cart using context
+    toast.success(`${product.title} added to cart!`);
   };
 
   const products = [
@@ -58,7 +66,12 @@ const ProductCardSection = () => {
                 <span className="product-price">{product.price}</span>
               </div>
               <div className="product-card-overlay">
-                <button className="product-add-to-cart">Add to Cart</button>
+                <button 
+                  className="product-add-to-cart"
+                  onClick={() => handleAddToCart(product)} // Add to cart
+                >
+                  Add to Cart
+                </button>
                 <div className="product-icon-buttons">
                   <a href="#" onClick={handleShare}>
                     <FontAwesomeIcon icon={faShareAlt} title="Share" />
@@ -80,7 +93,7 @@ const ProductCardSection = () => {
           </Link>
         </div>
       </section>
-      <ToastContainer /> {/* Add this where you want to display the toast */}
+      <ToastContainer /> {/* Toast container to display notifications */}
     </>
   );
 };
