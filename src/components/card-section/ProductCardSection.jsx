@@ -78,11 +78,14 @@ const ProductCardSection = () => {
                   </a>
                   <Link to="/product-description">
                     <FontAwesomeIcon icon={faExchangeAlt} title="Compare" />
+                   
                   </Link>
                   <a href="#" onClick={() => handleLike(product.id)}>
                     <FontAwesomeIcon icon={faHeart} title="Like" color={likedProducts.has(product.id) ? "red" : "black"} />
                   </a>
+                  
                 </div>
+                
               </div>
             </div>
           ))}

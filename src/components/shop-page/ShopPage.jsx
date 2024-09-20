@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import './shop-page.css'; // Ensure this file defines a 4x3 grid layout.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareAlt, faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ShopPage = () => {
   const productsPerPage = 12; // Display 12 products per page
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedForComparison, setSelectedForComparison] = useState([]);
+  const navigate = useNavigate();
 
   // List of products
   const products = [
@@ -47,13 +49,32 @@ const ShopPage = () => {
     { id: 35, title: "Product 35", description: "Top seller", price: "$370", image: "src/assets/Grifo.png", discount: "-20%", bannerStyle: "discount-banner-3" },
     { id: 36, title: "Product 36", description: "Exclusive", price: "$380", image: "src/assets/Muggo.png", discount: "", bannerStyle: "discount-banner-4" }
   ];
-  
 
   // Calculate pagination details
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
   const totalPages = Math.ceil(products.length / productsPerPage);
+
+  // Handle product selection for comparison
+  const handleProductSelection = (product) => {
+    setSelectedForComparison((prevSelected) => {
+      if (prevSelected.find((p) => p.id === product.id)) {
+        return prevSelected.filter((p) => p.id !== product.id);
+      } else {
+        return [...prevSelected, product];
+      }
+    });
+  };
+
+  // Navigate to the comparison page
+  const handleCompare = () => {
+    if (selectedForComparison.length < 2) {
+      alert('Please select at least 2 products to compare.');
+    } else {
+      navigate('/product-comparison', { state: { selectedProducts: selectedForComparison } });
+    }
+  };
 
   // Page change handler
   const handlePageChange = (pageNumber) => {
@@ -62,7 +83,6 @@ const ShopPage = () => {
 
   return (
     <section className="shop-page-section">
-      {/* <h2>Shop All Products</h2> */}
       <div className="product-card-grid">
         {currentProducts.map((product) => (
           <div className="product-card" key={product.id}>
@@ -79,23 +99,31 @@ const ShopPage = () => {
               <button className="product-add-to-cart">Add to Cart</button>
               <div className="product-icon-buttons">
                 <a href="#"><FontAwesomeIcon icon={faShareAlt} title="Share" /></a>
-                <Link to="/product-description">
-                     <FontAwesomeIcon icon={faExchangeAlt} title="Compare" />
-                 </Link>
-
+                <Link to={`/product-description/${product.id}`}>
+                  <FontAwesomeIcon icon={faExchangeAlt} title="Compare" />
+                </Link>
                 <a href="#"><FontAwesomeIcon icon={faHeart} title="Like" /></a>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  onChange={() => handleProductSelection(product)}
+                  checked={selectedForComparison.some((p) => p.id === product.id)}
+                />
+                <label>Select for Comparison</label>
               </div>
             </div>
           </div>
         ))}
       </div>
-
+      <div className="compare-button-container">
+        <button className="compare-button" onClick={handleCompare}>
+          Compare Selected Products
+        </button>
+      </div>
       {/* Pagination Controls */}
       <div className="pagination-controls">
-        <button
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
+        <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
           Previous
         </button>
         {[...Array(totalPages)].map((_, index) => (
@@ -107,58 +135,28 @@ const ShopPage = () => {
             {index + 1}
           </button>
         ))}
-        <button
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-        >
+        <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
           Next
         </button>
       </div>
+
+      {/* Compare Button */}
+     
+
+      {/* Support Section */}
       <section className="support-section">
-  <div className="support-item">
-    <div className="support-icon">
-      <img src="src/assets/cup.svg" alt="High Quality" />
-    </div>
-    <div className="support-content">
-      <div className="support-text">High Quality</div>
-      <div className="support-subtext">Top-notch materials and craftsmanship</div>
-    </div>
-  </div>
-
-  <div className="support-item">
-    <div className="support-icon">
-      <img src="src/assets/tick.svg" alt="Warranty Protection" />
-    </div>
-    <div className="support-content">
-      <div className="support-text">Warranty Protection</div>
-      <div className="support-subtext">Comprehensive coverage included</div>
-    </div>
-  </div>
-
-  <div className="support-item">
-    <div className="support-icon">
-      <img src="src/assets/ship.svg" alt="Free Shipping" />
-    </div>
-    <div className="support-content">
-      <div className="support-text">Free Shipping</div>
-      <div className="support-subtext">No hidden fees or charges</div>
-    </div>
-  </div>
-
-  <div className="support-item">
-    <div className="support-icon">
-      <img src="src/assets/headset.svg" alt="24/7 Support" />
-    </div>
-    <div className="support-content">
-      <div className="support-text">24/7 Support</div>
-      <div className="support-subtext">Always here to assist you</div>
-    </div>
-  </div>
-</section>
-
-
+        <div className="support-item">
+          <div className="support-icon">
+            <img src="src/assets/cup.svg" alt="High Quality" />
+          </div>
+          <div className="support-content">
+            <div className="support-text">High Quality</div>
+            <div className="support-subtext">Top-notch materials and craftsmanship</div>
+          </div>
+        </div>
+        {/* Add more support items as needed */}
+      </section>
     </section>
-    
   );
 };
 

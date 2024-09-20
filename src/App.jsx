@@ -7,43 +7,47 @@ import ImageSlider from './components/imageSlider/ImageSlider';
 import GallerySection from './components/gallery-section/GallerySection';
 import Footer from './components/footer-section/Footer';
 import ShopPage from './components/shop-page/ShopPage';
-import ProductDescription from './components/product-description/ProductDescription'; // Import ProductDescription
+import ProductDescription from './components/product-description/ProductDescription'; 
+import ProductComparison from './components/product-comparison/ProductComparison'; // Import ProductComparison
 import { CartProvider } from './components/cart/CartContext';
 
 function App() {
   return (
     <Router>
-     <CartProvider>
-     <Navbar />
-      <Routes>
-        {/* Home Page */}
-        <Route path="/" element={
-          <>
-            <section id="home">
-              <Hero />
-            </section>
-            <section id="shop">
-              <Body />
-            </section>
-            <section id="about">
-              <ProductCardSection />
-            </section>
-            <section id="contact">
-              <ImageSlider />
-              <GallerySection />
-            </section>
-          </>
-        } />
+      <CartProvider>
+        <Navbar />
+        <Routes>
+          {/* Home Page */}
+          <Route path="/" element={
+            <>
+              <section id="home">
+                <Hero />
+              </section>
+              <section id="shop">
+                <Body />
+              </section>
+              <section id="about">
+                <ProductCardSection />
+              </section>
+              <section id="contact">
+                <ImageSlider />
+                <GallerySection />
+              </section>
+            </>
+          } />
 
-        {/* Separate Route for ShopPage */}
-        <Route path="/shop-page" element={<ShopPage />} />
+          {/* Separate Route for ShopPage */}
+          <Route path="/shop-page" element={<ShopPage />} />
 
-        {/* Separate Route for ProductDescription */}
-        <Route path="/product-description" element={<ProductDescription />} />
-        
-      </Routes>
-      <Footer /> {/* Ensure Footer is included here */}
-     </CartProvider>
+          {/* Route for ProductDescription */}
+          <Route path="/product-description/:productId" element={<ProductDescription />} />
+
+          {/* Route for ProductComparison */}
+          <Route path="/product-comparison" element={<ProductComparison />} />
+
+        </Routes>
+        <Footer /> {/* Ensure Footer is included here */}
+      </CartProvider>
     </Router>
   );
 }
