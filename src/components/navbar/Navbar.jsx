@@ -64,6 +64,9 @@ const Navbar = () => {
         <li>
           <Link to="/contact">Contact</Link>
         </li>
+        <li>
+          <Link to="/blog">Blog</Link> {/* New Blog Link */}
+        </li>
       </ul>
       <div className="icons">
         <a href="">
@@ -101,6 +104,11 @@ const Navbar = () => {
             <li>
               <Link to="/contact" onClick={toggleMobileMenu}>
                 Contact
+              </Link>
+            </li>
+            <li>
+              <Link to="/blog" onClick={toggleMobileMenu}> {/* Blog Link in mobile menu */}
+                Blog
               </Link>
             </li>
           </ul>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Hero from './components/hero-section/Hero';
@@ -8,7 +9,8 @@ import GallerySection from './components/gallery-section/GallerySection';
 import Footer from './components/footer-section/Footer';
 import ShopPage from './components/shop-page/ShopPage';
 import ProductDescription from './components/product-description/ProductDescription'; 
-import ProductComparison from './components/product-comparison/ProductComparison'; // Import ProductComparison
+import ProductComparison from './components/product-comparison/ProductComparison';
+import BlogPage from './components/blog-page/BlogPage'; // Import BlogPage
 import { CartProvider } from './components/cart/CartContext';
 
 function App() {
@@ -45,8 +47,11 @@ function App() {
           {/* Route for ProductComparison */}
           <Route path="/product-comparison" element={<ProductComparison />} />
 
+          {/* Route for BlogPage */}
+          <Route path="/blog" element={<BlogPage />} /> {/* New Blog Page Route */}
+
         </Routes>
-        <Footer /> {/* Ensure Footer is included here */}
+        <Footer />
       </CartProvider>
     </Router>
   );

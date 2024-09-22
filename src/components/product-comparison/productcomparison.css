@@ -1,3 +1,126 @@
-.comparison-container{
+.product-comparison {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-image: url(src/assets/producthead.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+.logo {
+    margin-bottom: 10px;
+}
+
+.header-text {
+    text-align: center;
+    color: black;
+    margin: 0;
+}
+
+.compare-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.items {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add margin here to move images down */
+}
+
+.img-1, .img-2 {
+    margin: 0 20px;
+    text-align: center;
+}
+
+.choose-product {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dropdown-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-dropdown {
+    padding: 8px;
+    font-size: 16px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: rgba(184, 142, 47, 1);
+    color: white;
+}
+
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.comparison-table {
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 15px;
+    border-right: 2px solid #ddd; /* Right border for separation */
+}
+
+.comparison-table th:nth-child(2), .comparison-table td:nth-child(2) {
+    border-left: 2px solid #ddd; /* Left border for the second column */
+}
+
+.comparison-table th:last-child, .comparison-table td:last-child {
+    border-right: none; /* Remove right border from last column */
+}
+
+.comparison-table th {
+    font-weight: bold;
+}
+
+.comparison-table td {
+    text-align: left;
+}
+
+/* Space between two table sections */
+.spaced-section {
+    margin-top: 20px; /* Add space above the second section */
+}
+
+.product-info {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.product-price, .product-rating, .product-reviews {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Remove horizontal lines */
+.comparison-table tr {
+    border-top: none; /* Remove the line above each row */
 }
