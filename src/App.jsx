@@ -12,6 +12,8 @@ import ProductDescription from './components/product-description/ProductDescript
 import ProductComparison from './components/product-comparison/ProductComparison';
 import BlogPage from './components/blog-page/BlogPage'; // Import BlogPage
 import { CartProvider } from './components/cart/CartContext';
+import ContactPage from './components/contact/ContactPage';
+import CheckoutPage from './components/checkout/CheckoutPage';
 
 function App() {
   return (
@@ -40,6 +42,7 @@ function App() {
 
           {/* Separate Route for ShopPage */}
           <Route path="/shop-page" element={<ShopPage />} />
+          
 
           {/* Route for ProductDescription */}
           <Route path="/product-description/:productId" element={<ProductDescription />} />
@@ -49,6 +52,9 @@ function App() {
 
           {/* Route for BlogPage */}
           <Route path="/blog" element={<BlogPage />} /> {/* New Blog Page Route */}
+            {/* Route for ContactPage */}
+            <Route path="/contact" element={<ContactPage />} /> {/* New Blog Page Route */}
+            <Route path='/checkout' element={<CheckoutPage/>}/>
 
         </Routes>
         <Footer />

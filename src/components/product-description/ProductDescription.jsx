@@ -8,10 +8,10 @@ import { Link } from 'react-router-dom'; // Import Link
 const ProductDescription = () => {
   const [quantity, setQuantity] = useState(1);
   const products = [
-    { id: 1, title: "Product 1", description: "Best quality product", price: "$50", image: "src/assets/Images.png", discount: "-30%", bannerStyle: "discount-banner-1" },
-    { id: 2, title: "Product 2", description: "Highly recommended", price: "$60", image: "src/assets/Leviosa.png", discount: "", bannerStyle: "discount-banner-2" },
-    { id: 3, title: "Product 3", description: "Limited time offer", price: "$40", image: "src/assets/Lolito.png", discount: "-20%", bannerStyle: "discount-banner-3" },
-    { id: 4, title: "Product 4", description: "Great for everyday use", price: "$70", image: "src/assets/Respira.png", discount: "", bannerStyle: "discount-banner-4" },
+    { id: 1, title: "Product 1", description: "Best quality product", price: "$50", image: "https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042465/hbyx3aieh0diyv3xm2d7.png", discount: "-30%", bannerStyle: "discount-banner-1" },
+    { id: 2, title: "Product 2", description: "Highly recommended", price: "$60", image: "https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042464/vb8x6a6oxmrovnm0kiqv.png", discount: "", bannerStyle: "discount-banner-2" },
+    { id: 3, title: "Product 3", description: "Limited time offer", price: "$40", image: "https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042462/vxz4p6ny6zf7v1ukpudo.png", discount: "-20%", bannerStyle: "discount-banner-3" },
+    { id: 4, title: "Product 4", description: "Great for everyday use", price: "$70", image: "https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042465/hbyx3aieh0diyv3xm2d7.png", discount: "", bannerStyle: "discount-banner-4" },
    
   ];
   const handleQuantityChange = (amount) => {
@@ -23,13 +23,13 @@ const ProductDescription = () => {
         <div className="product-description">
       <div className="left-section">
         <div className="small-photos">
-          <img src="src/assets/Sofa1.png" alt="Product Side 1" />
-          <img src="src/assets/Sofa2.png" alt="Product Side 2" />
-          <img src="src/assets/Sofa3.png" alt="Product Side 3" />
-          <img src="src/assets/Sofa4.png" alt="Product Side 4" />
+          <img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042456/pcdcp3x37vomjizjaubk.png" alt="Product Side 1" />
+          <img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042456/dbqhpkxzdqzrn1qn9lgs.png" alt="Product Side 2" />
+          <img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042454/bxebdrnacsmv1ab2bbns.png" alt="Product Side 3" />
+          <img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042455/yuotrjgfqajt7hkbopml.png" alt="Product Side 4" />
         </div>
         <div className="main-photo">
-          <img src="src/assets/sofa.png" alt="Main Product" />
+          <img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042455/lofu4s2ko6bhi1oi6t64.png" alt="Main Product" />
         </div>
       </div>
 
@@ -87,10 +87,10 @@ const ProductDescription = () => {
         <div className="share-section">
           <div className="share-buttons">
             Share:
-           <i><img src="src/assets/facebook.svg" alt="" /></i>
-           <i><img src="src/assets/twitter.svg" alt="" />
+           <i><img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042462/k7blna52s3lvqzsrkgw5.svg" alt="" /></i>
+           <i><img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042466/ottoz8dic35effqhor7f.png" alt="" />
            </i>
-         <i><img src="src/assets/linkedin2.png" alt="" /></i>
+         <i><img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042457/mdhmsyun17vtsxtzq18j.svg" alt="" /></i>
           </div>
         </div>
       </div>
@@ -114,8 +114,8 @@ Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled
 </p>
 </div>
 <div className="image-gallery">
-  <img src="src/assets/pinksofa.png" alt="Product Side 1" className="gallery-image" />
-  <img src="src/assets/pinksofa.png" alt="Product Side 2" className="gallery-image" />
+  <img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042450/uk8xytrsa5toyjbnvq2m.png" alt="Product Side 1" className="gallery-image" />
+  <img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727042450/uk8xytrsa5toyjbnvq2m.png" alt="Product Side 2" className="gallery-image" />
 </div>
 
 <section className="product-card-section">

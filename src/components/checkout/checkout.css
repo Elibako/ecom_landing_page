@@ -1,0 +1,63 @@
+.checkout-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.checkout-left,
+.checkout-right {
+  width: 48%;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  flex-basis: 48%; /* For side-by-side layout */
+}
+
+.order-summary {
+  margin-top: 20px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subtotal {
+  margin-top: 10px;
+}
+
+.payment-methods {
+  margin-top: 20px;
+}
+
+.payment-info {
+  font-size: 0.9em;
+  color: gray;
+}
+
+.submit-btn {
+  margin-top: 10px;
+}
+.styled-dropdown {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  appearance: none; /* Hide default dropdown arrow */
+  background-color: white;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"%3E%3Cpath fill="%234B4B4B" d="M8 12l-4-4h8z"/%3E%3C/svg%3E'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.styled-dropdown:focus {
+  border-color: rgba(184, 142, 47, 1);
+  outline: none; /* Remove default focus outline */
+}

@@ -2,133 +2,194 @@
     display: flex;
     padding: 20px;
     gap: 40px;
-  }
-  
-  /* Sidebar Styling */
-  .sidebar {
-    width: 25%;
+}
+
+.sidebar {
+    width: 20%;
     padding: 20px;
-    /* background-color: #f4f4f4; */
     border-radius: 8px;
-  }
-  .search-bar {
+    flex-shrink: 0;
+}
+
+.posts {
+    width: 75%;
+    flex-grow: 1;
+}
+
+.search-bar {
     display: flex;
     align-items: center;
-    position: relative; /* Position relative for absolute positioning of the icon */
-  }
-  
-  .search-bar input {
+    position: relative;
+}
+
+.search-bar input {
     width: 100%;
-    padding: 8px 40px 8px 10px; /* Add padding to the left for the icon */
+    padding: 8px 40px 8px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-  
-  .search-icon {
+}
+
+.search-icon {
     position: absolute;
-    right: 10px; /* Adjust the positioning as needed */
-    cursor: pointer; /* Optional: change cursor to pointer on hover */
-  }
-  
-  
-  .search-bar input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .categories {
+    right: 10px;
+    cursor: pointer;
+}
+
+.categories {
     margin-top: 20px;
-  }
-  
-  .categories h3 {
+}
+
+.categories h3 {
     margin-bottom: 10px;
-  }
-  
-  .categories ul {
+}
+
+.categories ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  .categories li {
+}
+
+.categories li {
     margin-bottom: 10px;
     cursor: pointer;
     color: #555;
-  }
-  
-  .categories li:hover {
+}
+
+.categories li:hover {
     color: #000;
     font-weight: bold;
-  }
-  
-  /* Recent Posts Styling */
-  .recent-posts {
+}
+
+.recent-posts {
     margin-top: 20px;
-  }
-  
-  .recent-posts h3 {
+}
+
+.recent-posts h3 {
     margin-bottom: 10px;
-  }
-  
-  .recent-post {
+}
+
+.recent-post {
     display: flex;
     margin-bottom: 15px;
-  }
-  
-  .recent-post-image {
-    width: 60px; /* Adjust as needed */
+}
+
+.recent-post-image {
+    width: 60px;
     height: auto;
     border-radius: 4px;
-    margin-right: 10px; /* Space between image and text */
-  }
-  
-  .recent-post-info {
+    margin-right: 10px;
+}
+.categories li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #555;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between name and count */
+}
+
+.categories li span:last-child {
+    margin-left: 10px; /* Add left margin to the count for spacing */
+}
+
+.recent-post-info {
     flex-grow: 1;
-  }
-  
-  /* Posts Section Styling */
-  .posts {
-    width: 70%;
-  }
-  
-  .post {
+}
+
+.post {
     margin-bottom: 40px;
     padding-bottom: 20px;
     border-bottom: 1px solid #ddd;
-  }
-  
-  .post-image {
+}
+
+.post-image {
     width: 100%;
     height: auto;
     border-radius: 8px;
-  }
-  
-  .post-info {
+}
+
+.post-info {
     margin-top: 10px;
     color: #888;
     font-size: 14px;
-  }
-  
-  .post-content {
+}
+
+.post-content {
     margin-top: 15px;
-  }
-  
-  .post-content p {
+}
+
+.post-content p {
     font-size: 16px;
     line-height: 1.5;
     color: #333;
-  }
-  
-  .read-more {
+}
+
+.read-more {
     display: inline-block;
     margin-top: 10px;
     font-weight: bold;
     color: #007bff;
     text-decoration: none;
-  }
-  
-  .read-more:hover {
+}
+
+.read-more:hover {
     text-decoration: underline;
-  }
-  
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination span {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.pagination-link {
+    background-color: rgba(184, 142, 47, 1);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.pagination-link:hover {
+    background-color: #0056b3;
+}
+
+.pagination-link.active {
+    background-color: rgba(184, 142, 47, 1);
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .pagination {
+        flex-direction: column;
+    }
+
+    .pagination-link {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .posts {
+        width: 100%;
+    }
+}

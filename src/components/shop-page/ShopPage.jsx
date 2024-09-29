@@ -155,7 +155,35 @@ const ShopPage = () => {
           </div>
         </div>
         {/* Add more support items as needed */}
+        <div className="support-item">
+          <div className="support-icon">
+            <img src="src/assets/cup.svg" alt="High Quality" />
+          </div>
+          <div className="support-content">
+            <div className="support-text">High Quality</div>
+            <div className="support-subtext">Top-notch materials and craftsmanship</div>
+          </div>
+        </div>
+        <div className="support-item">
+          <div className="support-icon">
+            <img src="src/assets/cup.svg" alt="High Quality" />
+          </div>
+          <div className="support-content">
+            <div className="support-text">High Quality</div>
+            <div className="support-subtext">Top-notch materials and craftsmanship</div>
+          </div>
+        </div>
+        <div className="support-item">
+          <div className="support-icon">
+            <img src="src/assets/cup.svg" alt="High Quality" />
+          </div>
+          <div className="support-content">
+            <div className="support-text">High Quality</div>
+            <div className="support-subtext">Top-notch materials and craftsmanship</div>
+          </div>
+        </div>
       </section>
+      
     </section>
   );
 };

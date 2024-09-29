@@ -1,7 +1,7 @@
 import React from 'react';
 import './blog.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faUser, faCalendar, faTag } from '@fortawesome/free-solid-svg-icons';
 
 const BlogPage = () => {
   return (
@@ -12,42 +12,57 @@ const BlogPage = () => {
         </div>
       </div>
       <div className="blog-container">
-        {/* Right Main Content */}
         <div className="posts">
-          {/* Example Post */}
           <div className="post">
-            <img src="path/to/image1.jpg" alt="Post 1" className="post-image" />
+            <img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727048526/u8qo58engpuc4rtqsr04.png" alt="Post 1" className="post-image" />
             <div className="post-info">
-              <span>Posted by John Doe | Sep 20, 2024</span>
+              <span><FontAwesomeIcon icon={faUser} /> John Doe</span> | 
+              <span><FontAwesomeIcon icon={faCalendar} /> Sep 20, 2024</span> | 
+              <span><FontAwesomeIcon icon={faTag} /> Technology</span>
             </div>
             <div className="post-content">
-              <p>
-                This is the preview of the first blog post. It provides a glimpse
-                of what the full article is about...
-              </p>
+              <p>This is the preview of the first blog post. It provides a glimpse of what the full article is about...</p>
               <a href="#" className="read-more">Read More</a>
             </div>
           </div>
 
-          {/* Example Post 2 */}
           <div className="post">
-            <img src="path/to/image2.jpg" alt="Post 2" className="post-image" />
+            <img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727048527/rpz1mvfu5jradmbqxtr5.png" alt="Post 2" className="post-image" />
             <div className="post-info">
-              <span>Posted by Jane Smith | Sep 18, 2024</span>
+              <span><FontAwesomeIcon icon={faUser} /> Jane Smith</span> | 
+              <span><FontAwesomeIcon icon={faCalendar} /> Sep 18, 2024</span> | 
+              <span><FontAwesomeIcon icon={faTag} /> Business</span>
             </div>
             <div className="post-content">
-              <p>
-                Another interesting topic covered in this article, providing
-                insights on various subjects...
-              </p>
+              <h4>Going all-in with millennial design</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
               <a href="#" className="read-more">Read More</a>
             </div>
           </div>
 
-          {/* Add more posts as needed */}
+          <div className="post">
+            <img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727048526/u8qo58engpuc4rtqsr04.png" alt="Post 3" className="post-image" />
+            <div className="post-info">
+              <span><FontAwesomeIcon icon={faUser} /> Alex Johnson</span> | 
+              <span><FontAwesomeIcon icon={faCalendar} /> Sep 15, 2024</span> | 
+              <span><FontAwesomeIcon icon={faTag} /> Lifestyle</span>
+            </div>
+            <div className="post-content">
+              <h4>Exploring new ways of decorating</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+              <a href="#" className="read-more">Read More</a>
+            </div>
+          </div>
+
+          <div className="pagination">
+            <span>Page:</span>
+            <a href="#" className="pagination-link">1</a>
+            <a href="#" className="pagination-link">2</a>
+            <a href="#" className="pagination-link">3</a>
+            <a href="#" className="pagination-link">Next</a>
+          </div>
         </div>
 
-        {/* Left Sidebar */}
         <aside className="sidebar">
           <div className="search-bar">
             <input type="text" placeholder="Search..." />
@@ -58,18 +73,32 @@ const BlogPage = () => {
           <div className="categories">
             <h3>Categories</h3>
             <ul>
-              <li>Technology (5)</li>
-              <li>Business (3)</li>
-              <li>Lifestyle (8)</li>
-              <li>Health (4)</li>
-              <li>Education (2)</li>
+              <li>
+                <span>Technology</span>
+                <span>5</span>
+              </li>
+              <li>
+                <span>Business</span>
+                <span>3</span>
+              </li>
+              <li>
+                <span>Lifestyle</span>
+                <span>8</span>
+              </li>
+              <li>
+                <span>Health</span>
+                <span>4</span>
+              </li>
+              <li>
+                <span>Education</span>
+                <span>2</span>
+              </li>
             </ul>
           </div>
-          {/* Recent Posts Section */}
           <div className="recent-posts">
             <h3>Recent Posts</h3>
             <div className="recent-post">
-              <img src="path/to/recent1.jpg" alt="Recent Post 1" className="recent-post-image" />
+              <img src="https://res.cloudinary.com/dgcvgu7dt/image/upload/v1727049095/ffvqxa9yov5ldpmnzkab.png" alt="Recent Post 1" className="recent-post-image" />
               <div className="recent-post-info">
                 <p>This is a short description of the recent post.</p>
                 <span>Sep 21, 2024</span>
@@ -82,7 +111,6 @@ const BlogPage = () => {
                 <span>Sep 19, 2024</span>
               </div>
             </div>
-            {/* Add more recent posts as needed */}
           </div>
         </aside>
       </div>
